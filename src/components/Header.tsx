@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   HiHome,
   HiMagnifyingGlass,
@@ -46,7 +46,7 @@ function Header() {
     } else {
       const timeout = setTimeout(() => {
         setIsVisible(false);
-      }, 500); // Match this duration with the CSS transition duration
+      }, 300);
 
       return () => clearTimeout(timeout);
     }
