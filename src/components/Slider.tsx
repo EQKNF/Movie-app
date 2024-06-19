@@ -28,8 +28,8 @@ function Slider() {
   const sliderRight = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; // padding-left + padding-right
-      const marginRight = 21; // mr-5
+      const padding = 64 * 2; 
+      const marginRight = 21;
       const scrollAmount = containerWidth - padding + marginRight;
 
       smoothScroll(element, scrollAmount);
@@ -39,8 +39,8 @@ function Slider() {
   const sliderLeft = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; // padding-left + padding-right
-      const marginRight = 21; // mr-5
+      const padding = 64 * 2; 
+      const marginRight = 21; 
       const scrollAmount = -(containerWidth - padding + marginRight);
 
       smoothScroll(element, scrollAmount);
@@ -49,7 +49,7 @@ function Slider() {
 
   const smoothScroll = (element: HTMLDivElement, scrollAmount: number) => {
     const startTime = performance.now();
-    const duration = 500; // 0.5 seconds
+    const duration = 500; 
 
     const start = element.scrollLeft;
     const end = start + scrollAmount;
