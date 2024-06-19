@@ -17,6 +17,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+::-webkit-scrollbar {display:none;}
 
 a {
   font-weight: 500;
