@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      scrollBehavior: ['responsive'],
+    },
   },
   /*eslint-env node*/
   plugins: [
