@@ -21,15 +21,15 @@ function Slider() {
   const getTrendingMovies = () => {
     GlobalApi.getTrendingVideos.then((response) => {
       console.log(response.data.results);
-      setMovieList(response.data.results);
+      setMovieList(response.data.results.slice(0, 15));
     });
   };
 
   const sliderRight = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; 
-      const marginRight = 20; 
+      const padding = 64 * 2; // padding-left + padding-right
+      const marginRight = 21; // mr-5
       const scrollAmount = containerWidth - padding + marginRight;
 
       smoothScroll(element, scrollAmount);
@@ -39,8 +39,8 @@ function Slider() {
   const sliderLeft = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; 
-      const marginRight = 20; 
+      const padding = 64 * 2; // padding-left + padding-right
+      const marginRight = 21; // mr-5
       const scrollAmount = -(containerWidth - padding + marginRight);
 
       smoothScroll(element, scrollAmount);
@@ -49,7 +49,7 @@ function Slider() {
 
   const smoothScroll = (element: HTMLDivElement, scrollAmount: number) => {
     const startTime = performance.now();
-    const duration = 500; 
+    const duration = 500; // 0.5 seconds
 
     const start = element.scrollLeft;
     const end = start + scrollAmount;
@@ -89,7 +89,7 @@ function Slider() {
       
       <HiChevronRight onClick={() => sliderRight(elementSliderRef.current)} className="hidden md:block text-white text-3xl absolute mx-8 mt-[155px] cursor-pointer right-0" />
 
-      <div ref={elementSliderRef} className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide scroll-smooth">
+      <div ref={elementSliderRef} className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide">
         {movieList.map((item, index) => (
           <img
             key={item.id}
