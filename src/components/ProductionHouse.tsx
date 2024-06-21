@@ -51,7 +51,7 @@ const ProductionHouse: React.FC = () => {
             {productionHouseList.map((item) => (
                 <div
                     key={item.id}
-                    className="relative border-[3px] border-solid border-gray-50 rounded-2xl cursor-pointer hover:scale-110 transition-all duration-300"
+                    className="relative border-[3px] border-solid border-gray-50 rounded-2xl  hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl shadow-black"
                     onMouseEnter={() => handleMouseEnter(item.id)}
                     onMouseLeave={() => handleMouseLeave(item.id)}
                     style={{ overflow: "hidden" }} 
