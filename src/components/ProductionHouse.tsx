@@ -51,10 +51,10 @@ const ProductionHouse: React.FC = () => {
             {productionHouseList.map((item) => (
                 <div
                     key={item.id}
-                    className="relative border-[3.5px] border-solid border-gray-50 rounded-lg cursor-pointer hover:scale-110 transition-all duration-300"
+                    className="relative border-[3.5px] border-solid border-gray-50 rounded-2xl cursor-pointer hover:scale-110 transition-all duration-300"
                     onMouseEnter={() => handleMouseEnter(item.id)}
                     onMouseLeave={() => handleMouseLeave(item.id)}
-                    style={{ overflow: "hidden" }} // Ensure no overflow issues
+                    style={{ overflow: "hidden" }} 
                 >
                     <video
                         ref={(el) => (videoRefs.current[item.id] = el)}
@@ -62,13 +62,13 @@ const ProductionHouse: React.FC = () => {
                         muted
                         loop
                         autoPlay={false}
-                        className="absolute inset-0 w-full h-full object-cover z-0"
-                        style={{ display: "block" }} // Ensure it covers the entire area
+                        className="absolute inset-0 w-full h-full object-cover z-0 opacity-0"
+                        style={{ display: "block" }} 
                     />
                     <img
                         src={item.image}
                         className="relative z-10 w-full h-full"
-                        style={{ display: "block", pointerEvents: "none" }} // Ensure it covers the entire area and doesn't capture events
+                        style={{ display: "block", pointerEvents: "none" }} 
                     />
                 </div>
             ))}
