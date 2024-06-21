@@ -28,7 +28,7 @@ function Slider() {
   const sliderRight = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; 
+      const padding = 64 * 2;
       const marginRight = 21;
       const scrollAmount = containerWidth - padding + marginRight;
 
@@ -39,8 +39,8 @@ function Slider() {
   const sliderLeft = (element: HTMLDivElement | null) => {
     if (element) {
       const containerWidth = element.clientWidth;
-      const padding = 64 * 2; 
-      const marginRight = 21; 
+      const padding = 64 * 2;
+      const marginRight = 21;
       const scrollAmount = -(containerWidth - padding + marginRight);
 
       smoothScroll(element, scrollAmount);
@@ -49,7 +49,7 @@ function Slider() {
 
   const smoothScroll = (element: HTMLDivElement, scrollAmount: number) => {
     const startTime = performance.now();
-    const duration = 500; 
+    const duration = 500;
 
     const start = element.scrollLeft;
     const end = start + scrollAmount;
@@ -85,17 +85,28 @@ function Slider() {
 
   return (
     <div className="relative">
-      <HiChevronLeft onClick={() => sliderLeft(elementSliderRef.current)} className="hidden md:block text-white text-3xl absolute mx-8 mt-[155px] cursor-pointer" />
-      
-      <HiChevronRight onClick={() => sliderRight(elementSliderRef.current)} className="hidden md:block text-white text-3xl absolute mx-8 mt-[155px] cursor-pointer right-0" />
+      <HiChevronLeft
+        onClick={() => sliderLeft(elementSliderRef.current)}
+        className="hidden md:block text-white text-3xl absolute mx-8 mt-[155px] cursor-pointer"
+      />
 
-      <div ref={elementSliderRef} className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide">
+      <HiChevronRight
+        onClick={() => sliderRight(elementSliderRef.current)}
+        className="hidden md:block text-white text-3xl absolute mx-8 mt-[155px] cursor-pointer right-0"
+      />
+
+      <div
+        ref={elementSliderRef}
+        className="flex overflow-x-auto w-full px-16 py-4 scrollbar-hide"
+      >
         {movieList.map((item, index) => (
           <img
             key={item.id}
             src={imageBaseUrl + item.backdrop_path}
             alt={item.title}
-            className={`min-w-full md:h-[310px] object-cover object-left-top rounded-lg ${index < movieList.length - 1 ? 'mr-5' : ''}`}
+            className={`min-w-full md:h-[310px] object-cover object-left-top rounded-lg ${
+              index < movieList.length - 1 ? "mr-5" : ""
+            }`}
           />
         ))}
       </div>
