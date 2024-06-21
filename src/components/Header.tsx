@@ -8,6 +8,7 @@ import {
 } from "react-icons/hi2";
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
+import logo from "./../assets/images/logo2.png";
 
 function Header() {
   const [isHovered, setIsHovered] = useState(false);
@@ -55,7 +56,9 @@ function Header() {
   return (
     <div className="flex items-center justify-between p-5">
       <div className="flex gap-8 items-center">
-        <div className="w-[80px] md:w-[115px] object-cover">Disnot-</div>
+        <div className="w-[80px] md:w-[115px] object-cover">
+          <img src={logo} alt="" />
+        </div>
         <div className="hidden md:flex gap-8">
           {menu.map((item) => (
             <HeaderItem key={item.name} name={item.name} Icon={item.icon} />
