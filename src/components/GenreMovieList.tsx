@@ -7,9 +7,13 @@ function GenreMovieList() {
       {GenresList.genres.map(
         (item, index) =>
           index <= 4 && (
-            <div className="p-4 px-8 md:px-16">
-              <h2 className="text-2xl font-bold text-white">{item.name}</h2>
-              <MovieList genreId={item.id}></MovieList>
+            <div>
+              <div className="px-8 md:px-16">
+                <h2 className="text-2xl font-bold text-white">{item.name}</h2>
+              </div>
+              <div>
+                <MovieList genreId={item.id}></MovieList>
+              </div>
             </div>
           )
       )}

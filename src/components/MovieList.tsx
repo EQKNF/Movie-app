@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
+import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 
 interface MovieListProps {
   genreId: number;
@@ -22,7 +23,7 @@ function MovieList({ genreId }: MovieListProps) {
   };
 
   return (
-    <div className="flex gap-5 overflow-x-auto scrollbar-hide pt-4">
+    <div className="flex gap-5 overflow-x-auto scrollbar-hide p-5">
       {movieList.map((item) => (
         <MovieCard movie={item}></MovieCard>
       ))}
