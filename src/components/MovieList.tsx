@@ -25,11 +25,15 @@ function MovieList({ genreId }: MovieListProps) {
     });
   };
 
-  const slideRight = (element) => {
-    element.scrollLeft += 500;
+  const slideRight = (element: HTMLDivElement | null) => {
+    if (element) {
+      element.scrollLeft += 500;
+    }
   };
-  const slideLeft = (element) => {
-    element.scrollLeft -= 500;
+  const slideLeft = (element: HTMLDivElement | null) => {
+    if (element) {
+      element.scrollLeft -= 500;
+    }
   };
 
   return (
