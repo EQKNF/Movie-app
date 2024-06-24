@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 
 function GenreMovieList() {
   return (
-    <div>
+    <div className="px-10 py-2">
       {GenresList.genres.map(
         (item, index) =>
           index <= 4 && (

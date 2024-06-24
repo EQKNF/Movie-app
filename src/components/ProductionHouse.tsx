@@ -51,7 +51,7 @@ function ProductionHouse() {
       {productionHouseList.map((item) => (
         <div
           key={item.id}
-          className="relative hover:border-[3px] border-solid border-gray-50 rounded-xl hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl shadow-black"
+          className="relative border-[3px] border-solid border-transparent hover:border-gray-50 rounded-xl hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl shadow-black"
           onMouseEnter={() => handleMouseEnter(item.id)}
           onMouseLeave={() => handleMouseLeave(item.id)}
           style={{ overflow: "hidden" }}
