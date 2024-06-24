@@ -12,7 +12,7 @@ function GenreMovieList() {
                 <h2 className="text-2xl font-bold text-white">{item.name}</h2>
               </div>
               <div>
-                <MovieList genreId={item.id}></MovieList>
+                <MovieList genreId={item.id} indexGenre={index} />
               </div>
             </div>
           )

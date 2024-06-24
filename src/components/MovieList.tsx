@@ -2,14 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
-
-const index_ = 4;
+import LandscapeMovieCard from "./LandscapeMovieCard";
 
 interface MovieListProps {
   genreId: number;
+  indexGenre: number;
 }
 
-function MovieList({ genreId }: MovieListProps) {
+function MovieList({ genreId, indexGenre }: MovieListProps) {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef(null);
 
@@ -43,7 +43,7 @@ function MovieList({ genreId }: MovieListProps) {
         className={`text-[50px] text-white
            p-2 z-10 cursor-pointer 
             hidden md:block absolute
-            ${index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"} `}
+            ${indexGenre % 3 == 0 ? "mt-[80px]" : "mt-[150px]"} `}
       />
 
       <div
@@ -51,7 +51,13 @@ function MovieList({ genreId }: MovieListProps) {
         className="flex gap-5 overflow-x-auto scrollbar-hide p-5"
       >
         {movieList.map((item) => (
-          <MovieCard movie={item}></MovieCard>
+          <>
+            {indexGenre % 3 == 0 ? (
+              <LandscapeMovieCard movie={item} />
+            ) : (
+              <MovieCard movie={item} />
+            )}
+          </>
         ))}
       </div>
 
@@ -60,7 +66,7 @@ function MovieList({ genreId }: MovieListProps) {
         className={`text-[50px] text-white hidden md:block
            p-2 cursor-pointer z-10 top-0
             absolute right-0 
-            ${index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"}`}
+            ${indexGenre % 3 == 0 ? "mt-[80px]" : "mt-[150px]"}`}
       />
     </div>
   );
