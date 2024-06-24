@@ -1,7 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+
+const index_ = 4;
 
 interface MovieListProps {
   genreId: number;
@@ -9,6 +11,7 @@ interface MovieListProps {
 
 function MovieList({ genreId }: MovieListProps) {
   const [movieList, setMovieList] = useState([]);
+  const elementRef = useRef(null);
 
   useEffect(() => {
     getMovieByGenreId();
@@ -22,11 +25,39 @@ function MovieList({ genreId }: MovieListProps) {
     });
   };
 
+  const slideRight = (element) => {
+    element.scrollLeft += 500;
+  };
+  const slideLeft = (element) => {
+    element.scrollLeft -= 500;
+  };
+
   return (
-    <div className="flex gap-5 overflow-x-auto scrollbar-hide p-5">
-      {movieList.map((item) => (
-        <MovieCard movie={item}></MovieCard>
-      ))}
+    <div className="relative">
+      <IoChevronBackOutline
+        onClick={() => slideLeft(elementRef.current)}
+        className={`text-[50px] text-white
+           p-2 z-10 cursor-pointer 
+            hidden md:block absolute
+            ${index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"} `}
+      />
+
+      <div
+        ref={elementRef}
+        className="flex gap-5 overflow-x-auto scrollbar-hide p-5"
+      >
+        {movieList.map((item) => (
+          <MovieCard movie={item}></MovieCard>
+        ))}
+      </div>
+
+      <IoChevronForwardOutline
+        onClick={() => slideRight(elementRef.current)}
+        className={`text-[50px] text-white hidden md:block
+           p-2 cursor-pointer z-10 top-0
+            absolute right-0 
+            ${index_ % 3 == 0 ? "mt-[80px]" : "mt-[150px]"}`}
+      />
     </div>
   );
 }
