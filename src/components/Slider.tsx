@@ -55,7 +55,6 @@ function Slider() {
             prevEl: ".swiper-button-prev",
           }}
           modules={[Pagination, Navigation]}
-          className="p-4"
         >
           {movieList.map((item) => (
             <SwiperSlide
@@ -71,7 +70,7 @@ function Slider() {
           ))}
         </Swiper>
       </div>
-      <div className="swiper-pagination pb-0"></div>
+      <div className="swiper-pagination pt-4"></div>
 
       <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 img-slider-btn transition-all duration-300 swiper-button-prev"></button>
       <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 img-slider-btn transition-all duration-300 swiper-button-next"></button>
