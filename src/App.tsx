@@ -6,11 +6,17 @@ import Slider from "./components/Slider";
 function App() {
   return (
     <div>
-      <Header />
+      <section className="fixed z-40 w-full">
+        <Header />
+      </section>
 
-      <Slider />
+      <div className="relative w-full h-full pt-[100px]">
+        <Slider />
+      </div>
 
-      <ProductionHouse />
+      <div className="pt-10">
+        <ProductionHouse />
+      </div>
 
       <GenreMovieList />
     </div>

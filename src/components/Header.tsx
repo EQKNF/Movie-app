@@ -54,7 +54,7 @@ function Header() {
   }, [isHovered]);
 
   return (
-    <div className="flex items-center justify-between p-5">
+    <div className="relative flex items-center justify-between p-5 bg-slate-950">
       <div className="flex gap-8 items-center">
         <div className="w-[80px] md:w-[115px] object-cover">
           <img src={logo} alt="" />
