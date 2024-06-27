@@ -30,8 +30,8 @@ function Slider() {
   }
 
   return (
-    <div className="relative swiper-container">
-      <div className="swiper-wrapper padding-bottom: 30px;">
+    <div className="relative swiper-container ">
+      <div className="swiper-wrapper ">
         <Swiper
           effect="slide"
           grabCursor={true}
@@ -55,16 +55,17 @@ function Slider() {
             prevEl: ".swiper-button-prev",
           }}
           modules={[Pagination, Navigation]}
+          className="p-[60px] py-4"
         >
           {movieList.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="hover:outline outline-3 rounded-md transition-all duration-300 cursor-pointer"
+              className=" outline outline-3 rounded-md outline-transparent hover:outline-slate-50 transition-all duration-300 cursor-pointer"
             >
               <img
                 src={imageBaseUrl + item.backdrop_path}
                 alt={item.title}
-                className="object-cover rounded-md w-full h-full"
+                className="object-cover rounded-md"
               />
             </SwiperSlide>
           ))}
@@ -72,8 +73,8 @@ function Slider() {
       </div>
       <div className="swiper-pagination pt-4"></div>
 
-      <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 img-slider-btn transition-all duration-300 swiper-button-prev"></button>
-      <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 img-slider-btn transition-all duration-300 swiper-button-next"></button>
+      <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev"></button>
+      <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next"></button>
     </div>
   );
 }
