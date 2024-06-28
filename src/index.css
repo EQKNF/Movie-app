@@ -48,5 +48,5 @@ h3 {
   font: 800 40px Arial;
   -webkit-text-fill-color: white;
   -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: grey;
+  -webkit-text-stroke-color: rgb(86, 78, 197);
 }
