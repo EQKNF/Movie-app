@@ -43,7 +43,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         className={`text-[50px] text-white
            p-2 z-10 cursor-pointer 
             hidden md:block absolute
-            ${indexGenre % 3 == 0 ? "mt-[80px]" : "mt-[150px]"} `}
+            ${indexGenre % 3 == 0 ? "mt-[150px]" : "mt-[80px]"} `}
       />
 
       <div
@@ -53,9 +53,9 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         {movieList.map((item) => (
           <>
             {indexGenre % 3 == 0 ? (
-              <LandscapeMovieCard movie={item} />
-            ) : (
               <MovieCard movie={item} />
+            ) : (
+              <LandscapeMovieCard movie={item} />
             )}
           </>
         ))}
@@ -66,7 +66,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         className={`text-[50px] text-white hidden md:block
            p-2 cursor-pointer z-10 top-0
             absolute right-0 
-            ${indexGenre % 3 == 0 ? "mt-[80px]" : "mt-[150px]"}`}
+            ${indexGenre % 3 == 0 ? "mt-[150px]" : "mt-[80px]"}`}
       />
     </div>
   );

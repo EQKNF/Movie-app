@@ -34,3 +34,19 @@ body {
   background-color: rgb(71, 72, 73);
   opacity: 1;
 }
+
+.swiper-slide {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+}
+
+h3 {
+  font: 800 40px Arial;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: gray;
+}

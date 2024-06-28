@@ -30,14 +30,16 @@ function Slider() {
   }
 
   return (
-    <div className="relative swiper-container ">
-      <div className="swiper-wrapper ">
+    <div className="relative swiper-container">
+      <div className="swiper-wrapper">
         <Swiper
           effect="slide"
           grabCursor={true}
           centeredSlides={true}
           loop={true}
           spaceBetween={20}
+          slidesPerView={1}
+          /*
           breakpoints={{
             640: {
               slidesPerView: 1,
@@ -49,6 +51,7 @@ function Slider() {
               slidesPerView: 3,
             },
           }}
+          */
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
@@ -58,18 +61,21 @@ function Slider() {
             prevEl: ".swiper-button-prev",
           }}
           modules={[Pagination, Navigation]}
-          className="p-[60px] py-4"
+          className="p-[70px] py-4"
         >
           {movieList.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="outline outline-3 rounded-md outline-transparent hover:outline-slate-50 transition-all duration-300 cursor-pointer"
+              className="swiper-slide rounded-md border-[3px] border-solid border-transparent hover:border-gray-50 transition-all duration-300 cursor-pointer shadow-lg shadow-black"
             >
               <img
                 src={imageBaseUrl + item.backdrop_path}
                 alt={item.title}
-                className="object-cover rounded-md"
+                className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full transition-all duration-300"
               />
+              <h3 className="absolute bottom-10 left-10 font-semibold text-pretty 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-85">
+                {item.title}
+              </h3>
             </SwiperSlide>
           ))}
         </Swiper>

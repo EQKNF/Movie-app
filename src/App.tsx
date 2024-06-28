@@ -10,7 +10,7 @@ function App() {
         <Header />
       </section>
 
-      <div className="relative w-full h-full pt-[100px]">
+      <div className="relative w-full h-full pt-[70px]">
         <Slider />
       </div>
 
