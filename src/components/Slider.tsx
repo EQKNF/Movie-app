@@ -37,14 +37,17 @@ function Slider() {
           grabCursor={true}
           centeredSlides={true}
           loop={true}
-          slidesPerView={3}
           spaceBetween={20}
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 200,
-            modifier: 1,
-            slideShadows: false,
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
           }}
           pagination={{
             el: ".swiper-pagination",
@@ -60,7 +63,7 @@ function Slider() {
           {movieList.map((item) => (
             <SwiperSlide
               key={item.id}
-              className=" outline outline-3 rounded-md outline-transparent hover:outline-slate-50 transition-all duration-300 cursor-pointer"
+              className="outline outline-3 rounded-md outline-transparent hover:outline-slate-50 transition-all duration-300 cursor-pointer"
             >
               <img
                 src={imageBaseUrl + item.backdrop_path}
@@ -78,5 +81,4 @@ function Slider() {
     </div>
   );
 }
-
 export default Slider;
