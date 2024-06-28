@@ -73,7 +73,7 @@ function Slider() {
                 alt={item.title}
                 className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full transition-all duration-300"
               />
-              <h3 className="absolute bottom-10 left-10 font-semibold text-pretty 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-85">
+              <h3 className="absolute bottom-10 left-10 font-semibold text-pretty 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-85 max-w-[520px]">
                 {item.title}
               </h3>
             </SwiperSlide>
