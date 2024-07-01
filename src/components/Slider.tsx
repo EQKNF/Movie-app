@@ -36,7 +36,7 @@ function Slider() {
           grabCursor={true}
           centeredSlides={true}
           loop={true}
-          spaceBetween={20}
+          spaceBetween={15}
           slidesPerView={1}
           /*
           breakpoints={{

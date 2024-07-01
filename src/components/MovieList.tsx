@@ -12,8 +12,15 @@ interface MovieListProps {
   indexGenre: number;
 }
 
+interface Movie {
+  id: number;
+  title: string;
+  backdrop_path: string;
+  poster_path: string;
+}
+
 function MovieList({ genreId, indexGenre }: MovieListProps) {
-  const [movieList, setMovieList] = useState([]);
+  const [movieList, setMovieList] = useState<Movie[]>([]);
 
   useEffect(() => {
     getMovieByGenreId();
@@ -32,24 +39,11 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
       <Swiper
         effect="slide"
         grabCursor={false}
-        centeredSlides={true}
-        loop={true}
+        centeredSlides={false}
+        loop={false}
         spaceBetween={20}
+        slidesPerGroup={3}
         slidesPerView={6}
-        slidesOffsetBefore={0}
-        /*
-        breakpoints={{
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: {
-            slidesPerView: 3,
-          },
-        }}
-        */
         navigation={{
           nextEl: `.swiper-button-next-${indexGenre}`,
           prevEl: `.swiper-button-prev-${indexGenre}`,
@@ -58,7 +52,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         className="p-[70px] py-4 relative"
       >
         {movieList.map((item) => (
-          <SwiperSlide key={indexGenre}>
+          <SwiperSlide key={item.id}>
             {indexGenre % 3 === 0 ? (
               <MovieCard movie={item} />
             ) : (
