@@ -3,7 +3,6 @@ import GlobalApi from "../services/GlobalApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
@@ -66,7 +65,7 @@ function Slider() {
           {movieList.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="swiper-slide rounded-md border-[3px] border-solid border-transparent hover:border-gray-50 transition-all duration-300 cursor-pointer shadow-lg shadow-black"
+              className="swiper-slide rounded-lg border-[3px] border-solid border-transparent hover:border-gray-50 transition-all duration-300 cursor-pointer shadow-lg shadow-black"
             >
               <div className="relative">
                 <img

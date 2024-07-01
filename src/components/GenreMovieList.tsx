@@ -3,10 +3,10 @@ import MovieList from "./MovieList";
 
 function GenreMovieList() {
   return (
-    <div className="px-10 py-2">
+    <div className="">
       {GenresList.genres.map(
         (item, index) =>
-          index <= 4 && (
+          index <= 5 && (
             <div>
               <div className="px-8 md:px-16">
                 <h2 className="text-2xl font-bold text-white">{item.name}</h2>
