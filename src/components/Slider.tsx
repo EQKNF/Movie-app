@@ -68,14 +68,16 @@ function Slider() {
               key={item.id}
               className="swiper-slide rounded-md border-[3px] border-solid border-transparent hover:border-gray-50 transition-all duration-300 cursor-pointer shadow-lg shadow-black"
             >
-              <img
-                src={imageBaseUrl + item.backdrop_path}
-                alt={item.title}
-                className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full transition-all duration-300"
-              />
-              <h3 className="absolute bottom-[40%] left-[70px] font-semibold text-pretty 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[520px]">
-                {item.title}
-              </h3>
+              <div className="relative">
+                <img
+                  src={imageBaseUrl + item.backdrop_path}
+                  alt={item.title}
+                  className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full transition-all duration-300"
+                />
+                <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
+                  {item.title}
+                </h3>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
