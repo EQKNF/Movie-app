@@ -44,6 +44,20 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         spaceBetween={20}
         slidesPerGroup={3}
         slidesPerView={6}
+        breakpoints={{
+          1024: {
+            slidesPerView: 6,
+          },
+          768: {
+            slidesPerView: 5,
+          },
+          640: {
+            slidesPerView: 4,
+          },
+          320: {
+            slidesPerView: 3,
+          },
+        }}
         navigation={{
           nextEl: `.swiper-button-next-${indexGenre}`,
           prevEl: `.swiper-button-prev-${indexGenre}`,
