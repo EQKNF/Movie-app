@@ -54,10 +54,10 @@ function Header() {
   }, [isHovered]);
 
   return (
-    <div className="relative flex items-center justify-between p-5 bg-slate-950">
+    <div className="relative flex items-center justify-between py-4 px-2 bg-slate-950">
       <div className="flex gap-8 items-center">
-        <div className="w-[80px] md:w-[115px] object-cover">
-          <img src={logo} alt="" />
+        <div className="object-cover">
+          <img src={logo} alt="Disnot logo" className="w-[140px]" />
         </div>
         <div className="hidden md:flex gap-8">
           {menu.map((item) => (

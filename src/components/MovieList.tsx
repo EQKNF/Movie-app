@@ -76,10 +76,10 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         ))}
       </Swiper>
       <button
-        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev`}
+        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300`}
       ></button>
       <button
-        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next`}
+        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300`}
       ></button>
     </div>
   );

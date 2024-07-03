@@ -65,13 +65,13 @@ function Slider() {
           {movieList.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="swiper-slide rounded-lg border-[3px] border-solid border-transparent hover:border-gray-50 transition-all duration-300 cursor-pointer shadow-lg shadow-black"
+              className="swiper-slide rounded-lg border-[3px] border-solid border-transparent hover:border-white transition-all duration-300 cursor-pointer shadow-lg shadow-black"
             >
               <div className="relative">
                 <img
                   src={imageBaseUrl + item.backdrop_path}
                   alt={item.title}
-                  className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full transition-all duration-300"
+                  className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full"
                 />
                 <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
                   {item.title}
