@@ -71,7 +71,7 @@ function Slider() {
                 <img
                   src={imageBaseUrl + item.backdrop_path}
                   alt={item.title}
-                  className="object-cover rounded-md 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full"
+                  className="object-cover rounded-[5px] 2xl:max-h-[630px] lg:max-h-[500px] sm:max-h-[300px] w-full"
                 />
                 <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
                   {item.title}
