@@ -54,47 +54,37 @@ function Header() {
   }, [isHovered]);
 
   return (
-    <div className="relative flex items-center justify-between pt-3 pb-4 px-2 bg-slate-950">
+    <div className="flex items-center justify-between pt-3 pb-4 px-2 bg-zinc-950">
       <div className="flex gap-8 items-center">
-        <div className="object-cover">
-          <img src={logo} alt="Disnot logo" className="w-[140px]" />
-        </div>
-        <div className="hidden md:flex gap-8">
+        <img src={logo} alt="Disnot logo" className="w-[140px] object-cover" />
+
+        <div className="hidden lg:flex gap-8">
           {menu.map((item) => (
-            <HeaderItem key={item.name} name={item.name} Icon={item.icon} />
+            <HeaderItem name={item.name} Icon={item.icon} />
           ))}
         </div>
 
-        <div className="flex md:hidden gap-5">
+        <div className="flex lg:hidden gap-5">
           {menu.map(
             (item, index) =>
-              index < 3 && (
-                <HeaderItem key={item.name} name={""} Icon={item.icon} />
-              )
+              index < 3 && <HeaderItem name={""} Icon={item.icon} />
           )}
-        </div>
 
-        <div
-          className="md:hidden relative"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <HeaderItem name={""} Icon={HiDotsVertical} />
           <div
-            className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 ${
-              isHovered ? "opacity-100" : "opacity-0"
-            } ${isVisible ? "visible" : "invisible"}`}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
           >
-            {menu.map(
-              (item, index) =>
-                index > 2 && (
-                  <HeaderItem
-                    key={item.name}
-                    name={item.name}
-                    Icon={item.icon}
-                  />
-                )
-            )}
+            <HeaderItem name={""} Icon={HiDotsVertical} />
+            <div
+              className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 ${
+                isHovered ? "opacity-100" : "opacity-0"
+              } ${isVisible ? "visible" : "invisible"}`}
+            >
+              {menu.map(
+                (item, index) =>
+                  index > 2 && <HeaderItem name={item.name} Icon={item.icon} />
+              )}
+            </div>
           </div>
         </div>
       </div>
