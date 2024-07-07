@@ -58,9 +58,15 @@ function Header() {
       <div className="flex gap-8 items-center">
         <img src={logo} alt="Disnot logo" className="w-[140px] object-cover" />
 
-        <div className="hidden lg:flex gap-8">
+        <div className="hidden 2xl:flex gap-8">
           {menu.map((item) => (
             <HeaderItem name={item.name} Icon={item.icon} />
+          ))}
+        </div>
+
+        <div className="hidden lg:flex 2xl:hidden gap-5">
+          {menu.map((item) => (
+            <HeaderItem name={""} Icon={item.icon} />
           ))}
         </div>
 
