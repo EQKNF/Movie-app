@@ -35,7 +35,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
   };
 
   return (
-    <div className="swiper-container">
+    <div className="relative swiper-container">
       <Swiper
         effect="slide"
         grabCursor={false}
@@ -75,11 +75,17 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         ))}
       </Swiper>
       <button
-        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300`}
-      ></button>
+        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-1/2 left-0 transform -translate-y-1/2 h-12 w-12 text-2xl text-white bg-gray-800 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10`}
+        onClick={() => console.log("Prev button clicked")}
+      >
+        &#8249;
+      </button>
       <button
-        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300`}
-      ></button>
+        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-1/2 right-0 transform -translate-y-1/2 h-12 w-12 text-2xl text-white bg-gray-800 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10`}
+        onClick={() => console.log("Next button clicked")}
+      >
+        &#8250;
+      </button>
     </div>
   );
 }
