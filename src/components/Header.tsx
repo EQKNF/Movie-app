@@ -54,7 +54,7 @@ function Header() {
   }, [isHovered]);
 
   return (
-    <div className="flex items-center justify-between pt-3 pb-4 px-2 bg-zinc-950">
+    <div className="flex items-center justify-between py-3 px-2 bg-[#080404]">
       <div className="flex gap-8 items-center">
         <img src={logo} alt="Disnot logo" className="w-[140px] object-cover" />
 
@@ -94,11 +94,14 @@ function Header() {
           </div>
         </div>
       </div>
-      <img
-        src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
-        alt="user-avatar-icon"
-        className="w-10 rounded-full"
-      />
+      <div className="flex mr-3 items-center justify-between">
+        <h2 className="text-white mr-4 font-normal">User</h2>
+        <img
+          src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+          alt="user-avatar-icon"
+          className="w-[48px] rounded-full"
+        />
+      </div>
     </div>
   );
 }
