@@ -16,6 +16,7 @@ body {
     rgb(13, 16, 25) 70.5%
   );
   min-height: 100vh;
+  user-select: none;
 }
 
 .img-slider-btn:hover {
