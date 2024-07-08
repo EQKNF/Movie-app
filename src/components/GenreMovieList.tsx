@@ -24,7 +24,7 @@ function GenreMovieList() {
   }, []);
 
   return (
-    <div className="">
+    <div>
       {shuffledGenres.slice(0, 5).map((item, index) => (
         <div key={item.id}>
           <div className="px-8 md:px-16">

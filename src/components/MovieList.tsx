@@ -35,7 +35,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
   };
 
   return (
-    <div className="relative swiper-container">
+    <div className="swiper-container">
       <Swiper
         effect="slide"
         grabCursor={false}
@@ -43,7 +43,6 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         loop={false}
         spaceBetween={20}
         slidesPerGroup={3}
-        slidesPerView={6}
         breakpoints={{
           1024: {
             slidesPerView: 6,
@@ -63,7 +62,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
           prevEl: `.swiper-button-prev-${indexGenre}`,
         }}
         modules={[Navigation]}
-        className="p-[70px] py-4 relative"
+        className="relative px-[58px] pt-4 pb-6"
       >
         {movieList.map((item) => (
           <SwiperSlide key={item.id}>

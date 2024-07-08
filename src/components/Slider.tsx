@@ -81,7 +81,7 @@ function Slider() {
           ))}
         </Swiper>
       </div>
-      <div className="swiper-pagination pt-4"></div>
+      <div className="swiper-pagination pt-1"></div>
 
       <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev"></button>
       <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next"></button>

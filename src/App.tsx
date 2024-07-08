@@ -14,11 +14,13 @@ function App() {
         <Slider />
       </div>
 
-      <div className="pt-10">
+      <div className="pt-1">
         <ProductionHouse />
       </div>
 
-      <GenreMovieList />
+      <div className="pt-6">
+        <GenreMovieList />
+      </div>
     </div>
   );
 }

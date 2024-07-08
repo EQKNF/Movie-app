@@ -13,9 +13,9 @@ function MovieCard({ movie }: MovieCardProps) {
     <>
       <img
         src={IMAGE_BASE_URL + movie.poster_path}
-        className="max-h-[400px] rounded-lg
+        className="max-h-[446px] rounded-lg
         border-[3px] border-transparent hover:border-white
-        hover:scale-110 transition-all duration-150 ease-in p-0.5 cursor-pointer"
+        hover:scale-105 transition-all duration-150 ease-in p-0.5 cursor-pointer"
       />
     </>
   );

@@ -51,11 +51,10 @@ function ProductionHouse() {
       {productionHouseList.map((item) => (
         <div
           key={item.id}
-          className="relative border-[3px] border-solid border-transparent hover:border-gray-50 rounded-xl hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl shadow-black bg-[rgb(33,34,46)]
+          className="relative border-[3px] border-solid border-transparent hover:border-gray-50 rounded-xl hover:scale-105 transition-all duration-300 cursor-pointer shadow-xl shadow-black bg-[rgb(33,34,46)]
           00"
           onMouseEnter={() => handleMouseEnter(item.id)}
           onMouseLeave={() => handleMouseLeave(item.id)}
-          style={{ overflow: "hidden" }}
         >
           <video
             ref={(el) => (videoRefs.current[item.id] = el)}
@@ -64,13 +63,8 @@ function ProductionHouse() {
             loop
             autoPlay={false}
             className="absolute inset-0 w-full h-full object-cover z-0 opacity-0 p-0.5 rounded-[11px]"
-            style={{ display: "block" }}
           />
-          <img
-            src={item.image}
-            className="relative z-10 w-full h-full p-0.5"
-            style={{ display: "block", pointerEvents: "none" }}
-          />
+          <img src={item.image} className="relative z-10 w-full h-full p-0.5" />
         </div>
       ))}
     </div>
