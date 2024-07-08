@@ -11,10 +11,10 @@ interface LandscapeMovieCard {
 
 function LandscapeMovieCard({ movie }: LandscapeMovieCard) {
   return (
-    <div className="group hover:scale-110 transition-all duration-150 ease-in cursor-pointer flex flex-col items-center select-none pb-4">
+    <div className="group hover:scale-110 transition-all duration-150 ease-in cursor-pointer flex flex-col items-center select-none pb-4 ">
       <img
         src={IMAGE_BASE_URL + movie.backdrop_path}
-        className="rounded-lg border-[3px] border-transparent group-hover:border-white p-0.5"
+        className="rounded-lg border-[3px] border-transparent group-hover:border-white p-0.5 transition-all duration-150 ease-in shadow-lg shadow-black"
       />
       <h2 className="w-[110px] md:w-[260px] text-white mt-1 text-center">
         {movie.title}
