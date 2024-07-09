@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
 interface MovieListProps {
   genreId: number;
@@ -35,10 +36,11 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
   };
 
   return (
-    <div className="relative swiper-container">
+    <div className="relative swiper-container overflow-hidden">
       <Swiper
         effect="slide"
         grabCursor={false}
+        watchSlidesProgress={true}
         centeredSlides={false}
         loop={false}
         spaceBetween={20}
@@ -75,16 +77,14 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         ))}
       </Swiper>
       <button
-        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-1/2 left-0 transform -translate-y-1/2 h-12 w-12 text-2xl text-white bg-gray-800 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10`}
-        onClick={() => console.log("Prev button clicked")}
+        className={`swiper-button-prev-${indexGenre} hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 z-10`}
       >
-        &#8249;
+        <HiChevronLeft className="text-[50px] text-white -translate-x-2" />
       </button>
       <button
-        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-1/2 right-0 transform -translate-y-1/2 h-12 w-12 text-2xl text-white bg-gray-800 rounded-full opacity-70 hover:opacity-100 transition-all duration-300 z-10`}
-        onClick={() => console.log("Next button clicked")}
+        className={`swiper-button-next-${indexGenre} hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 z-10`}
       >
-        &#8250;
+        <HiChevronRight className="text-[50px] text-white translate-x-4" />
       </button>
     </div>
   );

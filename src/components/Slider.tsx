@@ -35,6 +35,7 @@ function Slider() {
           effect="slide"
           grabCursor={true}
           centeredSlides={true}
+          watchSlidesProgress={true}
           loop={true}
           spaceBetween={15}
           slidesPerView={1}
@@ -83,8 +84,8 @@ function Slider() {
       </div>
       <div className="swiper-pagination pt-1"></div>
 
-      <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev"></button>
-      <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next"></button>
+      <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev text-white"></button>
+      <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next text-white"></button>
     </div>
   );
 }

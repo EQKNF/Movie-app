@@ -45,6 +45,13 @@ body {
   opacity: 1;
 }
 */
+.swiper-slide {
+  opacity: 0.25;
+}
+.swiper-slide-visible {
+  opacity: 1;
+}
+
 h3 {
   font: 800 40px Arial;
   -webkit-text-fill-color: white;
