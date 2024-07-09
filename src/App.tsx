@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import GenreMovieList from "./components/GenreMovieList";
 import Header from "./components/Header";
 import ProductionHouse from "./components/ProductionHouse";
@@ -5,23 +6,27 @@ import Slider from "./components/Slider";
 
 function App() {
   return (
-    <div>
-      <section className="fixed z-40 w-full">
+    <>
+      <header className="fixed z-40 w-full">
         <Header />
+      </header>
+
+      <section className="pt-[65px]">
+        <Slider />
       </section>
 
-      <div className="pt-[65px]">
-        <Slider />
-      </div>
-
-      <div className="pt-1">
+      <section className="pt-1">
         <ProductionHouse />
-      </div>
+      </section>
 
-      <div className="pt-6">
+      <section className="pt-6 ">
         <GenreMovieList />
-      </div>
-    </div>
+      </section>
+
+      <footer className="mt-[70px]">
+        <Footer />
+      </footer>
+    </>
   );
 }
 

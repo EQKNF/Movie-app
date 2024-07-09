@@ -60,7 +60,11 @@ function Header() {
 
         <div className="hidden 2xl:flex gap-8">
           {menu.map((item) => (
-            <HeaderItem name={item.name} Icon={item.icon} />
+            <HeaderItem
+              name={item.name}
+              key={`header ${item.name}`}
+              Icon={item.icon}
+            />
           ))}
         </div>
 
@@ -95,7 +99,7 @@ function Header() {
         </div>
       </div>
       <div className="flex mr-3 items-center justify-between">
-        <h2 className="text-white mr-4 font-normal">User</h2>
+        <h2 className="text-white mr-4 font-normal hidden 2xl:block">User</h2>
         <img
           src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
           alt="user-avatar-icon"
