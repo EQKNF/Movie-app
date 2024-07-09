@@ -19,10 +19,6 @@ body {
   user-select: none;
 }
 
-.img-slider-btn:hover {
-  background-color: rgb(0, 0, 0, 0.2);
-}
-
 .swiper-pagination {
   position: relative !important;
 }
@@ -35,26 +31,10 @@ body {
   background-color: rgb(70, 76, 81);
   opacity: 1;
 }
-/*
-.swiper-slide {
-  opacity: 0.5;
-  transition: opacity 0.3s;
-}
 
-.swiper-slide-active {
-  opacity: 1;
-}
-*/
 .swiper-slide {
   opacity: 0.25;
 }
 .swiper-slide-visible {
   opacity: 1;
-}
-
-h3 {
-  font: 800 40px Arial;
-  -webkit-text-fill-color: white;
-  -webkit-text-stroke: 2px;
-  -webkit-text-stroke-color: rgb(87, 87, 87);
 }
