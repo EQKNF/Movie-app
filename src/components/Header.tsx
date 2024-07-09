@@ -56,7 +56,9 @@ function Header() {
   return (
     <div className="flex items-center justify-between py-3 px-2 bg-[#080404]">
       <div className="flex gap-8 items-center">
-        <img src={logo} alt="Disnot logo" className="w-[140px] object-cover" />
+        <a href="#">
+          <img src={logo} alt="Disnot logo" className="w-[160px]" />
+        </a>
 
         <div className="hidden 2xl:flex gap-8">
           {menu.map((item) => (
