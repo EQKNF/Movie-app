@@ -23,7 +23,7 @@ interface Movie {
 
 function MovieList({ genreId, indexGenre }: MovieListProps) {
   const [movieList, setMovieList] = useState<Movie[]>([]);
-  const [activeIndex, setActiveIndex] = useState(0);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,12 +36,6 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
       console.log(res.data.results);
       setMovieList(res.data.results.slice(0, 20));
     });
-  };
-
-  const handleSlideChange = (swiper: Swiper | undefined) => {
-    if (swiper) {
-      setActiveIndex(swiper.activeIndex);
-    }
   };
 
   const handleSlideClick = (movie: Movie) => {
@@ -58,7 +52,6 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         loop={false}
         spaceBetween={20}
         slidesPerGroup={3}
-        onSlideChange={handleSlideChange}
         breakpoints={{
           1024: {
             slidesPerView: 6,
