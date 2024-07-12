@@ -1,15 +1,17 @@
 import { useRef } from "react";
-import disney from "./../assets/images/disney.png";
-import marvel from "./../assets/images/marvel.png";
-import nationalG from "./../assets/images/nationalG.png";
-import pixar from "./../assets/images/pixar.png";
-import starwar from "./../assets/images/starwar.png";
+import disney from "./../assets/images/disney.webp";
+import marvel from "./../assets/images/marvel.webp";
+import nationalG from "./../assets/images/natGeo.webp";
+import pixar from "./../assets/images/pixar.webp";
+import starwar from "./../assets/images/star-wars.webp";
+import star from "./../assets/images/star.webp";
 
 import starwarV from "./../assets/videos/star-wars.mp4";
 import disneyV from "./../assets/videos/disney.mp4";
 import marvelV from "./../assets/videos/marvel.mp4";
 import nationalGeographicV from "./../assets/videos/national-geographic.mp4";
 import pixarV from "./../assets/videos/pixar.mp4";
+import starV from "./../assets/videos/star.mp4";
 
 interface ProductionHouseItem {
   id: number;
@@ -23,6 +25,7 @@ const productionHouseList: ProductionHouseItem[] = [
   { id: 3, image: marvel, video: marvelV },
   { id: 4, image: starwar, video: starwarV },
   { id: 5, image: nationalG, video: nationalGeographicV },
+  { id: 6, image: star, video: starV },
 ];
 
 function ProductionHouse() {
