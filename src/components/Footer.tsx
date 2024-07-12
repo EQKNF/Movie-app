@@ -15,7 +15,7 @@ function Footer() {
   ];
 
   return (
-    <div className="w-full h-[176px] bg-[#0e0b14] mx-0 my-auto ">
+    <div className="w-full h-[176px] bg-[#0e0b14] mx-0 my-auto">
       <div className="relative pt-5 pb-2 flex justify-center">
         <a href="#">
           <img src={logo} alt="Disnot logo" className="w-[160px]" />

@@ -29,7 +29,7 @@ function Slider() {
   }
 
   return (
-    <div className="relative swiper-container">
+    <div className="relative swiper-container pt-[76px]">
       <div className="swiper-wrapper">
         <Swiper
           effect="slide"

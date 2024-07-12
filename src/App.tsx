@@ -1,32 +1,46 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import GenreMovieList from "./components/GenreMovieList";
 import Header from "./components/Header";
 import ProductionHouse from "./components/ProductionHouse";
 import Slider from "./components/Slider";
+import Info from "./components/Info"; // Import the Info component
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <>
-      <header className="fixed z-40 w-full">
+    <Router>
+      <header>
         <Header />
       </header>
 
-      <section className="pt-[65px]">
-        <Slider />
-      </section>
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <section>
+                  <Slider />
+                </section>
+                <section>
+                  <ProductionHouse />
+                </section>
+                <section>
+                  <GenreMovieList />
+                </section>
+              </>
+            }
+          />
+          <Route path="/info/:id" element={<Info />} />{" "}
+        </Routes>
+      </main>
 
-      <section className="pt-1">
-        <ProductionHouse />
-      </section>
-
-      <section className="pt-6 ">
-        <GenreMovieList />
-      </section>
-
-      <footer className="mt-[70px]">
+      <footer>
         <Footer />
       </footer>
-    </>
+      <ScrollToTop />
+    </Router>
   );
 }
 

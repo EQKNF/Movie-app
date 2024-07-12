@@ -54,7 +54,7 @@ function Header() {
   }, [isHovered]);
 
   return (
-    <div className="flex items-center justify-between py-3 px-2 bg-[#080404]">
+    <div className="flex items-center justify-between pt-3 pb-4 px-2 bg-[#080404] fixed z-40 w-full ">
       <div className="flex gap-8 items-center">
         <a href="#">
           <img src={logo} alt="Disnot logo" className="w-[160px]" />

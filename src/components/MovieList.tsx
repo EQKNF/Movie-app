@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import GlobalApi from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
 import LandscapeMovieCard from "./LandscapeMovieCard";
@@ -22,6 +23,8 @@ interface Movie {
 
 function MovieList({ genreId, indexGenre }: MovieListProps) {
   const [movieList, setMovieList] = useState<Movie[]>([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getMovieByGenreId();
@@ -35,6 +38,16 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
     });
   };
 
+  const handleSlideChange = (swiper: Swiper | undefined) => {
+    if (swiper) {
+      setActiveIndex(swiper.activeIndex);
+    }
+  };
+
+  const handleSlideClick = (movie: Movie) => {
+    navigate(`/info/${movie.id}`, { state: { movie } });
+  };
+
   return (
     <div className="relative swiper-container overflow-hidden">
       <Swiper
@@ -45,6 +58,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
         loop={false}
         spaceBetween={20}
         slidesPerGroup={3}
+        onSlideChange={handleSlideChange}
         breakpoints={{
           1024: {
             slidesPerView: 6,
@@ -64,10 +78,10 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
           prevEl: `.swiper-button-prev-${indexGenre}`,
         }}
         modules={[Navigation]}
-        className="relative px-[58px] pt-4"
+        className="relative px-[58px]"
       >
         {movieList.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide key={item.id} onClick={() => handleSlideClick(item)}>
             {indexGenre % 3 === 0 ? (
               <MovieCard movie={item} />
             ) : (

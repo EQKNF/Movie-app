@@ -7,7 +7,7 @@ interface HeaderItemProps {
 
 function HeaderItem({ name, Icon }: HeaderItemProps) {
   return (
-    <div className="text-white flex items-center gap-4 cursor-pointer text-nowrap hover:underline underline-offset-8">
+    <div className="text-white flex items-center gap-4 cursor-pointer text-nowrap hover:underline underline-offset-8 py-2">
       <div className="text-xl">
         <Icon />
       </div>
