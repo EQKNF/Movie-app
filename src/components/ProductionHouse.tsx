@@ -65,9 +65,9 @@ function ProductionHouse() {
             muted
             loop
             autoPlay={false}
-            className="absolute inset-0 w-full h-full object-cover z-0 opacity-0 p-0.5 rounded-[11px]"
+            className="absolute inset-0 opacity-0 p-0.5 rounded-[11px]"
           />
-          <img src={item.image} className="relative z-10 w-full h-full p-0.5" />
+          <img src={item.image} className="relative w-full h-full p-0.5" />
         </div>
       ))}
     </div>
