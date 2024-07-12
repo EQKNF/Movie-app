@@ -19,7 +19,7 @@ function LandscapeMovieCard({ movie }: LandscapeMovieCard) {
         />
         <div className="absolute inset-0 rounded-lg border-[3px] border-transparent hover:border-white transition-all duration-300 ease-in m-[-6px]"></div>
       </div>
-      <h2 className="w-[110px] md:w-[340px] text-white pt-2 text-center">
+      <h2 className="w-[110px] md:w-[340px] text-white pt-2 text-center truncate">
         {movie.title}
       </h2>
     </div>
