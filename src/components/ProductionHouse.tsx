@@ -50,7 +50,7 @@ function ProductionHouse() {
   };
 
   return (
-    <div className="flex gap-2 md:gap-6 py-3 px-5 md:px-16">
+    <div className="grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-2 md:gap-6 py-3 px-5 md:px-16">
       {productionHouseList.map((item) => (
         <div
           key={item.id}
