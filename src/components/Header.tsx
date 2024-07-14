@@ -13,6 +13,7 @@ import logo from "./../assets/images/logo2.png";
 function Header() {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const menu = [
     {
@@ -53,8 +54,24 @@ function Header() {
     }
   }, [isHovered]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.pageYOffset;
+      setIsScrolled(scrollTop > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScrolled]);
+
   return (
-    <div className="flex items-center justify-between pt-3 pb-4 px-2 bg-[#080404] fixed z-40 w-full ">
+    <div
+      className={`flex items-center justify-between pt-3 pb-4 px-2 fixed z-40 w-full transition-all duration-300 ease-in ${
+        isScrolled ? "bg-[#080404]" : "bg-transparent"
+      }`}
+    >
       <div className="flex gap-8 items-center">
         <a href="#">
           <img src={logo} alt="Disnot logo" className="w-[160px]" />
