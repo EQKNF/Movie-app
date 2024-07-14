@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GlobalApi from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
 import LandscapeMovieCard from "./LandscapeMovieCard";
@@ -24,8 +24,6 @@ interface Movie {
 function MovieList({ genreId, indexGenre }: MovieListProps) {
   const [movieList, setMovieList] = useState<Movie[]>([]);
 
-  const navigate = useNavigate();
-
   useEffect(() => {
     getMovieByGenreId();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -36,10 +34,6 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
       console.log(res.data.results);
       setMovieList(res.data.results.slice(0, 20));
     });
-  };
-
-  const handleSlideClick = (movie: Movie) => {
-    navigate(`/info/${movie.id}`, { state: { movie } });
   };
 
   return (
@@ -71,15 +65,17 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
           prevEl: `.swiper-button-prev-${indexGenre}`,
         }}
         modules={[Navigation]}
-        className="relative px-[58px]"
+        className="relative px-[58px] pt-4"
       >
         {movieList.map((item) => (
-          <SwiperSlide key={item.id} onClick={() => handleSlideClick(item)}>
-            {indexGenre % 3 === 0 ? (
-              <MovieCard movie={item} />
-            ) : (
-              <LandscapeMovieCard movie={item} />
-            )}
+          <SwiperSlide key={item.id}>
+            <Link to={`/info/${item.id}`}>
+              {indexGenre % 3 === 0 ? (
+                <MovieCard movie={item} />
+              ) : (
+                <LandscapeMovieCard movie={item} />
+              )}
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

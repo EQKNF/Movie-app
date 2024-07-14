@@ -4,12 +4,13 @@ import GenreMovieList from "./components/GenreMovieList";
 import Header from "./components/Header";
 import ProductionHouse from "./components/ProductionHouse";
 import Slider from "./components/Slider";
-import Info from "./components/Info"; // Import the Info component
+import Info from "./components/Info";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <header>
         <Header />
       </header>
@@ -39,7 +40,6 @@ function App() {
       <footer>
         <Footer />
       </footer>
-      <ScrollToTop />
     </Router>
   );
 }
