@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import GlobalApi from "../services/GlobalApi";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
@@ -65,17 +66,19 @@ function Slider() {
         >
           {movieList.map((item) => (
             <SwiperSlide key={item.id} className="swiper-slide cursor-pointer">
-              <div className="relative group">
-                <div className="absolute inset-0 rounded-md border-[3px] border-transparent transition-all duration-300 ease-in group-hover:border-white m-[-2px]"></div>
-                <img
-                  src={imageBaseUrl + item.backdrop_path}
-                  alt={item.title}
-                  className=" object-cover rounded-md 2xl:max-h-[700px] lg:max-h-[500px] sm:max-h-[300px] w-full shadow-lg shadow-black"
-                />
-                <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
-                  {item.title}
-                </h3>
-              </div>
+              <Link to={`/info/${item.id}`}>
+                <div className="relative group">
+                  <div className="absolute inset-0 rounded-md border-[3px] border-transparent transition-all duration-300 ease-in group-hover:border-white m-[-2px]"></div>
+                  <img
+                    src={imageBaseUrl + item.backdrop_path}
+                    alt={item.title}
+                    className=" object-cover rounded-md 2xl:max-h-[700px] lg:max-h-[500px] sm:max-h-[300px] w-full shadow-lg shadow-black"
+                  />
+                  <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
+                    {item.title}
+                  </h3>
+                </div>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
