@@ -10,6 +10,7 @@ import {
 import { HiPlus, HiDotsVertical } from "react-icons/hi";
 import HeaderItem from "./HeaderItem";
 import logo from "./../assets/images/logo2.png";
+import profile from "./../assets/images/profile-icon.png";
 
 function Header() {
   const [isHovered, setIsHovered] = useState(false);
@@ -27,6 +28,14 @@ function Header() {
     { name: "ORIGINALS", icon: HiStar },
   ];
 
+  const profileDropMenu = [
+    { name: "Edit profiles" },
+    { name: "App settings" },
+    { name: "Account" },
+    { name: "Help" },
+    { name: "Sign out" },
+  ];
+
   useEffect(() => {
     if (isHovered) {
       setIsVisible(true);
@@ -41,7 +50,7 @@ function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
+      const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 0);
     };
 
@@ -112,13 +121,33 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="flex mr-3 items-center justify-between">
+      <div className="flex mr-4 items-center justify-between z-30">
         <h2 className="text-white mr-4 font-normal hidden 2xl:block">User</h2>
         <img
-          src="https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745"
+          src={profile}
           alt="user-avatar-icon"
-          className="w-[48px] rounded-full"
+          className="w-[50px] rounded-full mt-1"
         />
+      </div>
+
+      <div className="absolute top-0 right-0 bg-[#121212] border border-gray-600 rounded-md pt-[82px] pb-[40px] px-5 space-y-5 -translate-y-[450px]">
+        <hr className="solid px-[110px] border-gray-600 mb-5" />
+        <div className="flex flex-row items-center space-x-4 text-white cursor-pointer">
+          <div className="flex items-center justify-center w-12 h-12 bg-zinc-700 rounded-full text-5xl font-thin hover:bg-zinc-600">
+            <span className="-translate-y-[6px]">+</span>
+          </div>
+          <h2>Add profile</h2>
+        </div>
+        <div className="space-y-5">
+          {profileDropMenu.map((item, index) => (
+            <div
+              key={`profileDropMenu-${index}`}
+              className="inset-0 text-white rounded-md cursor-pointer text-left"
+            >
+              {item.name}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
