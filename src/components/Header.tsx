@@ -16,6 +16,7 @@ function Header() {
   const [isHovered, setIsHovered] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isProfileMenuHovered, setIsProfileMenuHovered] = useState(false); // New state for profile menu hover
 
   const navigate = useNavigate();
 
@@ -121,7 +122,12 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="flex mr-4 items-center justify-between z-30">
+
+      <div
+        className="flex mr-4 items-center justify-between cursor-pointer z-30"
+        onMouseEnter={() => setIsProfileMenuHovered(true)}
+        onMouseLeave={() => setIsProfileMenuHovered(false)}
+      >
         <h2 className="text-white mr-4 font-normal hidden 2xl:block">User</h2>
         <img
           src={profile}
@@ -130,7 +136,15 @@ function Header() {
         />
       </div>
 
-      <div className="absolute top-0 right-0 bg-[#121212] border border-gray-600 rounded-md pt-[82px] pb-[40px] px-5 space-y-5 -translate-y-[450px]">
+      <div
+        onMouseEnter={() => setIsProfileMenuHovered(true)}
+        onMouseLeave={() => setIsProfileMenuHovered(false)}
+        className={`absolute top-0 right-0 bg-[#121212] border border-gray-600 rounded-md pt-[82px] pb-[40px] px-5 space-y-5 transition-all duration-100 ease-in ${
+          isProfileMenuHovered
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-[330px] opacity-0"
+        }`}
+      >
         <hr className="solid px-[110px] border-gray-600 mb-5" />
         <div className="flex flex-row items-center space-x-4 text-white cursor-pointer">
           <div className="flex items-center justify-center w-12 h-12 bg-zinc-700 rounded-full text-5xl font-thin hover:bg-zinc-600">
@@ -142,7 +156,7 @@ function Header() {
           {profileDropMenu.map((item, index) => (
             <div
               key={`profileDropMenu-${index}`}
-              className="inset-0 text-white rounded-md cursor-pointer text-left"
+              className="text-white rounded-md cursor-pointer text-left"
             >
               {item.name}
             </div>
