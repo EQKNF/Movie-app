@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   HiHome,
   HiMagnifyingGlass,
@@ -15,31 +16,15 @@ function Header() {
   const [isVisible, setIsVisible] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const navigate = useNavigate();
+
   const menu = [
-    {
-      name: "HOME",
-      icon: HiHome,
-    },
-    {
-      name: "SEARCH",
-      icon: HiMagnifyingGlass,
-    },
-    {
-      name: "WATCH LIST",
-      icon: HiPlus,
-    },
-    {
-      name: "MOVIES",
-      icon: HiPlayCircle,
-    },
-    {
-      name: "SERIES",
-      icon: HiTv,
-    },
-    {
-      name: "ORIGINALS",
-      icon: HiStar,
-    },
+    { name: "HOME", icon: HiHome },
+    { name: "SEARCH", icon: HiMagnifyingGlass },
+    { name: "WATCH LIST", icon: HiPlus },
+    { name: "MOVIES", icon: HiPlayCircle },
+    { name: "SERIES", icon: HiTv },
+    { name: "ORIGINALS", icon: HiStar },
   ];
 
   useEffect(() => {
@@ -64,7 +49,7 @@ function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isScrolled]);
+  }, []);
 
   return (
     <div
@@ -73,7 +58,7 @@ function Header() {
       }`}
     >
       <div className="flex gap-8 items-center">
-        <a href="#">
+        <a href="#" onClick={() => navigate("/")}>
           <img src={logo} alt="Disnot logo" className="w-[160px]" />
         </a>
 
@@ -81,7 +66,7 @@ function Header() {
           {menu.map((item) => (
             <HeaderItem
               name={item.name}
-              key={`header ${item.name}`}
+              key={`header-2xl-${item.name}`}
               Icon={item.icon}
             />
           ))}
@@ -89,15 +74,22 @@ function Header() {
 
         <div className="hidden lg:flex 2xl:hidden gap-5">
           {menu.map((item) => (
-            <HeaderItem name={""} Icon={item.icon} />
+            <HeaderItem
+              key={`header-lg-${item.name}`}
+              name={""}
+              Icon={item.icon}
+            />
           ))}
         </div>
 
         <div className="flex lg:hidden gap-5">
-          {menu.map(
-            (item, index) =>
-              index < 3 && <HeaderItem name={""} Icon={item.icon} />
-          )}
+          {menu.slice(0, 3).map((item, index) => (
+            <HeaderItem
+              key={`header-mobile-${item.name}-${index}`}
+              name={""}
+              Icon={item.icon}
+            />
+          ))}
 
           <div
             onMouseEnter={() => setIsHovered(true)}
@@ -109,10 +101,13 @@ function Header() {
                 isHovered ? "opacity-100" : "opacity-0"
               } ${isVisible ? "visible" : "invisible"}`}
             >
-              {menu.map(
-                (item, index) =>
-                  index > 2 && <HeaderItem name={item.name} Icon={item.icon} />
-              )}
+              {menu.slice(3).map((item, index) => (
+                <HeaderItem
+                  key={`dropdown-${item.name}-${index}`}
+                  name={item.name}
+                  Icon={item.icon}
+                />
+              ))}
             </div>
           </div>
         </div>
