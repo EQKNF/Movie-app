@@ -65,7 +65,7 @@ function MovieList({ genreId, indexGenre }: MovieListProps) {
           prevEl: `.swiper-button-prev-${indexGenre}`,
         }}
         modules={[Navigation]}
-        className="relative px-[58px] pt-4"
+        className="relative px-[72px] "
       >
         {movieList.map((item) => (
           <SwiperSlide key={item.id}>
