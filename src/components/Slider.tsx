@@ -13,13 +13,24 @@ interface Movie {
   id: number;
   title: string;
   backdrop_path: string;
+  poster_path: string; // Added poster_path
 }
 
 function Slider() {
   const [movieList, setMovieList] = useState<Movie[]>([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640); // Track if the screen size is smaller than md
 
   useEffect(() => {
     getTrendingMovies();
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   function getTrendingMovies() {
@@ -40,19 +51,6 @@ function Slider() {
           loop={true}
           spaceBetween={15}
           slidesPerView={1}
-          /*
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-          }}
-          */
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
@@ -70,12 +68,17 @@ function Slider() {
                 <div className="relative group">
                   <div className="absolute inset-0 rounded-md border-[3px] border-transparent transition-all duration-300 ease-in group-hover:border-white m-[-2px]"></div>
                   <img
-                    src={imageBaseUrl + item.backdrop_path}
+                    src={
+                      imageBaseUrl +
+                      (isMobile ? item.poster_path : item.backdrop_path)
+                    }
                     alt={item.title}
-                    className=" object-cover rounded-sm 2xl:max-h-[700px] lg:max-h-[500px] sm:max-h-[300px] w-full shadow-lg shadow-black"
+                    className="object-cover rounded-sm 2xl:max-h-[700px] lg:max-h-[372px] md:max-h-[250px] sm:max-h-[150px] max-h-[520px] w-full shadow-lg shadow-black"
                   />
-                  <h3 className="absolute inset-0 flex items-center left-10 font-semibold 2xl:text-7xl xl:text-7xl lg:text-7xl md:text-7xl sm:text-7xl opacity-90 max-w-[600px]">
-                    {item.title}
+                  <h3 className="absolute inset-0 flex items-center left-10 lg:left-20  opacity-0 sm:opacity-90 max-w-[600px] ">
+                    <span className="font-semibold 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl text-white sm:font-outline-1 lg:font-outline-2">
+                      {item.title}
+                    </span>
                   </h3>
                 </div>
               </Link>
@@ -85,8 +88,8 @@ function Slider() {
       </div>
       <div className="swiper-pagination pt-1"></div>
 
-      <button className="hidden sm:block absolute top-0 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev text-white"></button>
-      <button className="hidden sm:block absolute top-0 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next text-white"></button>
+      <button className="absolute top-12 left-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-prev text-white"></button>
+      <button className="absolute top-12 right-0 h-full w-[56px] cursor-pointer opacity-0 hover:opacity-100 transition-all duration-300 swiper-button-next text-white"></button>
     </div>
   );
 }

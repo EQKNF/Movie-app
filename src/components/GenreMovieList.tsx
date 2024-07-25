@@ -27,7 +27,7 @@ function GenreMovieList() {
     <div className="mt-6 mb-[70px]">
       {shuffledGenres.slice(0, 5).map((item, index) => (
         <div key={item.id}>
-          <div className="px-6 md:px-[76px]">
+          <div className="px-11 md:px-[76px]">
             <h2 className="text-2xl font-semibold text-white">{item.name}</h2>
           </div>
           <div>
