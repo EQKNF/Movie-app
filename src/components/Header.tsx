@@ -63,13 +63,17 @@ function Header() {
 
   return (
     <div
-      className={`flex items-center justify-between pt-3 pb-4 px-2 fixed z-40 w-full transition-all duration-300 ease-in ${
+      className={`flex items-center justify-between pt-3 pb-4 md:px-2 fixed z-40 w-full transition-all duration-300 ease-in ${
         isScrolled ? "bg-[#080404]" : "bg-transparent"
       }`}
     >
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-4 md:gap-8 items-center">
         <a href="#" onClick={() => navigate("/")}>
-          <img src={logo} alt="Disnot logo" className="w-[160px]" />
+          <img
+            src={logo}
+            alt="Disnot logo"
+            className="w-[120px] md:w-[160px]"
+          />
         </a>
 
         <div className="hidden 2xl:flex gap-8">
@@ -142,7 +146,7 @@ function Header() {
         className={`absolute top-0 right-0 bg-[#121212] border border-gray-600 rounded-md pt-[82px] pb-[40px] px-5 space-y-5 transition-all duration-100 ease-in ${
           isProfileMenuHovered
             ? "translate-y-0 opacity-100"
-            : "-translate-y-[330px] opacity-0"
+            : "-translate-y-[450px] md:-translate-y-[330px] opacity-0"
         }`}
       >
         <hr className="solid px-[110px] border-gray-600 mb-5" />
