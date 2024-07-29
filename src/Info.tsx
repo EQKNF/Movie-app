@@ -33,22 +33,22 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="pt-[80px] px-[71px] bg-[#1A1D29]">
+    <div className="bg-[#1A1D29]">
       {movie ? (
         <div>
-          <h2 className="text-white">{movie.title}</h2>
           <div className="image-container">
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
               alt={movie.title}
+              className="z-[-10] image"
             />
           </div>
 
-          <div>
-            <h2 className="py-5 text-white font-semibold text-3xl tracking-wide">
+          <div className="pt-[40px] xl:px-[71px] md:px-[58px] px-[40px] text-white">
+            <h2 className="font-semibold text-3xl tracking-wide              ">
               Details
             </h2>
-            <hr className="" />
+            <hr />
             <h2>{movie.overview}</h2>
           </div>
         </div>
