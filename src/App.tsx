@@ -4,7 +4,7 @@ import GenreMovieList from "./components/GenreMovieList";
 import Header from "./components/Header";
 import ProductionHouse from "./components/ProductionHouse";
 import Slider from "./components/Slider";
-import Info from "./components/Info";
+import Info from "./Info";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
