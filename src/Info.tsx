@@ -8,6 +8,7 @@ interface Movie {
   backdrop_path: string;
   poster_path: string;
   overview: string;
+  tagline: string;
 }
 
 function Info() {
@@ -33,7 +34,7 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="bg-[#1A1D29]">
+    <div className="bg-[#1A1D29] text-white ">
       {movie ? (
         <div>
           <div className="image-container">
@@ -42,9 +43,12 @@ function Info() {
               alt={movie.title}
               className="z-[-10] image"
             />
+            <div className="absolute z-10 bottom-[150px]">
+              <h2>{movie.tagline}</h2>
+            </div>
           </div>
 
-          <div className="pt-[40px] xl:px-[71px] md:px-[58px] px-[40px] text-white">
+          <div className="pt-10 xl:px-[71px] md:px-[58px] px-[40px] ">
             <h2 className="font-semibold text-3xl tracking-wide              ">
               Details
             </h2>
