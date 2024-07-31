@@ -26,14 +26,14 @@ function Footer() {
           <a
             href="#"
             key={"footer" + item.name}
-            className="text-white px-3 py-2 text-xs font-medium transition-all duration-150 ease-in-out hover:text-gray-300"
+            className="text-white py-3 px-2 lg:px-3 text-xs font-medium transition-all duration-150 ease-in-out hover:text-gray-300"
           >
             {item.name}
           </a>
         ))}
       </div>
-      <div className="bg-inherit mt-1 ">
-        <h2 className="flex justify-center px-3 py-3  text-white text-xs">
+      <div className="bg-inherit">
+        <h2 className="flex justify-center px-3 py-3 pb-8 text-white text-xs">
           © Disnot. No rights reserved.
         </h2>
       </div>

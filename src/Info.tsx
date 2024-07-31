@@ -10,6 +10,9 @@ interface Movie {
   poster_path: string;
   overview: string;
   tagline: string;
+  release_date: string;
+  people: string;
+  vote_average: number;
 }
 
 function Info() {
@@ -48,7 +51,7 @@ function Info() {
 
           <div className="absolute top-[300px] z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] ">
             <div>
-              <h2>{movie.title}</h2>
+              <h2 className="text-7xl font-bold">{movie.title}</h2>
               <h2>{movie.tagline}</h2>
               <div className="flex gap-5 items-center">
                 <button className="py-4 pl-6 pr-8 rounded-md bg-white text-black flex gap-2 hover:bg-zinc-400 transition-all duration-150 ease-in">
@@ -61,12 +64,14 @@ function Info() {
               </div>
             </div>
 
-            <h2 className="font-semibold text-3xl tracking-wide              ">
-              Details
+            <h2 className="font-semibold text-2xl tracking-wider              ">
+              DETAILS
             </h2>
             <hr className="border-gray-500" />
-            <h2>{movie.title}</h2>
-            <h2>{movie.overview}</h2>
+            <h2 className="text-2xl font-bold">{movie.title}</h2>
+            <h2 className="text-xl">{movie.overview}</h2>
+            <h2>Release year: {movie.release_date}</h2>
+            <h2>Release year: {movie.people}</h2>
           </div>
         </div>
       ) : (
