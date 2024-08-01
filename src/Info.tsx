@@ -11,8 +11,29 @@ interface Movie {
   overview: string;
   tagline: string;
   release_date: string;
-  people: string;
   vote_average: number;
+  vote_count: number;
+  runtime: number;
+  genres: genres[];
+  production_companies: companies[];
+  production_countries: production[];
+  spoken_languages: spoken[];
+}
+
+interface genres {
+  id: number;
+  name: string;
+}
+interface companies {
+  id: number;
+  name: string;
+}
+interface production {
+  id: number;
+  name: string;
+}
+interface spoken {
+  english_name: string;
 }
 
 function Info() {
@@ -26,6 +47,7 @@ function Info() {
     if (id) {
       GlobalApi.getMovieById(id).then((res) => {
         setMovie(res.data);
+        console.log(res.data);
       });
     }
   }, [id]);
@@ -41,7 +63,7 @@ function Info() {
     <div className="bg-[#1A1D29] text-white min-h-[100vh] relative">
       {movie ? (
         <div>
-          <div className="image-container">
+          <div className="image-container min-h-96">
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
               alt={movie.title}
@@ -49,11 +71,13 @@ function Info() {
             />
           </div>
 
-          <div className="absolute top-[300px] z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] ">
-            <div>
-              <h2 className="text-7xl font-bold">{movie.title}</h2>
-              <h2>{movie.tagline}</h2>
-              <div className="flex gap-5 items-center">
+          <div className="absolute top-[150px] left-0 z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] w-full h-full">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-7xl font-bold max-w-[678px]">
+                {movie.title}
+              </h2>
+              <h2 className="text-xl">{movie.tagline}</h2>
+              <div className="flex gap-5 items-center mb-14">
                 <button className="py-4 pl-6 pr-8 rounded-md bg-white text-black flex gap-2 hover:bg-zinc-400 transition-all duration-150 ease-in">
                   <HiPlay className="text-3xl" />
                   <h2 className="text-lg tracking-widest">PLAY</h2>
@@ -63,15 +87,101 @@ function Info() {
                 </div>
               </div>
             </div>
+            <div className="flex flex-col gap-5">
+              <h2 className="font-semibold text-2xl tracking-wider              ">
+                DETAILS
+              </h2>
+              <hr className="border-gray-500" />
 
-            <h2 className="font-semibold text-2xl tracking-wider              ">
-              DETAILS
-            </h2>
-            <hr className="border-gray-500" />
-            <h2 className="text-2xl font-bold">{movie.title}</h2>
-            <h2 className="text-xl">{movie.overview}</h2>
-            <h2>Release year: {movie.release_date}</h2>
-            <h2>Release year: {movie.people}</h2>
+              <div className="flex gap-5 flex-col lg:flex-row ">
+                <div className="lg:w-1/2 flex flex-col gap-y-5">
+                  <h2 className="text-2xl font-bold">{movie.title}</h2>
+                  <h2 className=" text-xl">{movie.overview}</h2>
+                </div>
+
+                <div className="flex lg:w-1/2 gap-6">
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
+                    <h2>
+                      Release date:
+                      <br />
+                      {movie.release_date}
+                    </h2>
+                    <div>
+                      <h2>Genres:</h2>
+                      <ul className="flex">
+                        {movie.genres.map((genre, index) => (
+                          <li key={index}>
+                            {genre.name}
+                            {index < movie.genres.length - 1 && ","}&nbsp;
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <h2>
+                      Runtime:
+                      <br />
+                      {movie.runtime}m
+                    </h2>
+                    <h2>
+                      Rating:
+                      <br />
+                      {movie.vote_average}
+                    </h2>
+                    <h2>
+                      Vote count:
+                      <br />
+                      {movie.vote_count}
+                    </h2>
+                  </div>
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4 ">
+                    <div>
+                      <h2>Countries of orgin:</h2>
+                      <ul className="flex">
+                        {movie.production_countries.map(
+                          (production_countries, index) => (
+                            <li key={index}>
+                              {production_countries.name}
+                              {index < movie.production_countries.length - 1 &&
+                                ","}
+                              &nbsp;
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                    <div>
+                      <h2>Spoken languages:</h2>
+                      <ul className="flex">
+                        {movie.spoken_languages.map(
+                          (spoken_languages, index) => (
+                            <li key={index}>
+                              {spoken_languages.english_name}
+                              {index < movie.spoken_languages.length - 1 && ","}
+                              &nbsp;
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                    <div>
+                      <h2>Production companies:</h2>
+                      <ul className="flex flex-col">
+                        {movie.production_companies.map(
+                          (production_companies, index) => (
+                            <li key={index}>
+                              {production_companies.name}
+                              {index < movie.production_companies.length - 1 &&
+                                ","}
+                              {<br />}
+                            </li>
+                          )
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ) : (
