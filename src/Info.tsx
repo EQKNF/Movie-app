@@ -122,6 +122,8 @@ function Info() {
                       <br />
                       {movie.runtime}m
                     </h2>
+                  </div>
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
                     <h2>
                       Rating:
                       <br />
