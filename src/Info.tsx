@@ -60,18 +60,20 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="bg-[#1A1D29] text-white min-h-[100vh] relative">
+    <div className="relative bg-[#1A1D29] text-white">
       {movie ? (
-        <div>
-          <div className="image-container min-h-96">
-            <img
-              src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-              alt={movie.title}
-              className="z-[-10] image"
-            />
+        <div className="relative z-10">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+            <div className="absolute inset-0 image-container">
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                alt={movie.title}
+                className="object-cover w-full h-full image"
+              />
+            </div>
           </div>
 
-          <div className="absolute top-[150px] left-0 z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] w-full h-full">
+          <div className="relative z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] py-[150px]">
             <div className="flex flex-col gap-8">
               <h2 className="text-7xl font-bold max-w-[678px]">
                 {movie.title}
@@ -88,12 +90,10 @@ function Info() {
               </div>
             </div>
             <div className="flex flex-col gap-5">
-              <h2 className="font-semibold text-2xl tracking-wider              ">
-                DETAILS
-              </h2>
+              <h2 className="font-semibold text-2xl tracking-wider">DETAILS</h2>
               <hr className="border-gray-500" />
 
-              <div className="flex gap-5 flex-col lg:flex-row ">
+              <div className="flex gap-5 flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex flex-col gap-y-5">
                   <h2 className="text-2xl font-bold">{movie.title}</h2>
                   <h2 className=" text-xl">{movie.overview}</h2>
@@ -133,49 +133,43 @@ function Info() {
                       {movie.vote_count}
                     </h2>
                   </div>
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4 ">
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
                     <div>
-                      <h2>Countries of orgin:</h2>
+                      <h2>Countries of origin:</h2>
                       <ul className="flex">
-                        {movie.production_countries.map(
-                          (production_countries, index) => (
-                            <li key={index}>
-                              {production_countries.name}
-                              {index < movie.production_countries.length - 1 &&
-                                ","}
-                              &nbsp;
-                            </li>
-                          )
-                        )}
+                        {movie.production_countries.map((country, index) => (
+                          <li key={index}>
+                            {country.name}
+                            {index < movie.production_countries.length - 1 &&
+                              ","}
+                            &nbsp;
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     <div>
                       <h2>Spoken languages:</h2>
                       <ul className="flex">
-                        {movie.spoken_languages.map(
-                          (spoken_languages, index) => (
-                            <li key={index}>
-                              {spoken_languages.english_name}
-                              {index < movie.spoken_languages.length - 1 && ","}
-                              &nbsp;
-                            </li>
-                          )
-                        )}
+                        {movie.spoken_languages.map((language, index) => (
+                          <li key={index}>
+                            {language.english_name}
+                            {index < movie.spoken_languages.length - 1 && ","}
+                            &nbsp;
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     <div>
                       <h2>Production companies:</h2>
                       <ul className="flex flex-col">
-                        {movie.production_companies.map(
-                          (production_companies, index) => (
-                            <li key={index}>
-                              {production_companies.name}
-                              {index < movie.production_companies.length - 1 &&
-                                ","}
-                              {<br />}
-                            </li>
-                          )
-                        )}
+                        {movie.production_companies.map((company, index) => (
+                          <li key={index}>
+                            {company.name}
+                            {index < movie.production_companies.length - 1 &&
+                              ","}
+                            {<br />}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
