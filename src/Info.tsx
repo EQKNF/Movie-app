@@ -73,7 +73,7 @@ function Info() {
             </div>
           </div>
 
-          <div className="relative z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] py-[150px]">
+          <div className="relative z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] pt-[150px] pb-[50px]">
             <div className="flex flex-col gap-8">
               <h2 className="text-3xl md:text-7xl font-bold max-w-[678px]">
                 {movie.title}
@@ -93,52 +93,38 @@ function Info() {
               <h2 className="font-semibold text-2xl tracking-wider">DETAILS</h2>
               <hr className="border-gray-500" />
 
-              <div className="flex gap-5 flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex flex-col gap-y-5">
+              <div className="flex flex-col lg:flex-row gap-5 ">
+                <div className="lg:w-1/2 flex flex-col gap-5">
                   <h2 className="text-2xl font-bold">{movie.title}</h2>
                   <h2 className=" text-xl">{movie.overview}</h2>
                 </div>
 
-                <div className="flex lg:w-1/2 gap-5 flex-row">
-                  <div className="flex flex-col sm:flex-row gap-5">
-                    <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
-                      <h2>
-                        <span className="text-gray-400">Release date:</span>
-                        <br />
-                        {movie.release_date}
-                      </h2>
-                      <div>
-                        <span className="text-gray-400">Genres:</span>
-                        <ul className="flex flex-col">
-                          {movie.genres.map((genre, index) => (
-                            <li key={index}>
-                              {genre.name}
-                              {index < movie.genres.length - 1 && ","}&nbsp;
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <h2>
-                        <span className="text-gray-400">Runtime:</span>
-                        <br />
-                        {movie.runtime}m
-                      </h2>
+                <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 w-full mid:w-1/2">
+                  <div className="flex flex-col gap-5">
+                    <h2>
+                      <span className="text-gray-400">Release date:</span>
+                      <br />
+                      {movie.release_date}
+                    </h2>
+                    <div>
+                      <span className="text-gray-400">Genres:</span>
+                      <ul className="flex flex-col">
+                        {movie.genres.map((genre, index) => (
+                          <li key={index}>
+                            {genre.name}
+                            {index < movie.genres.length - 1 && ","}&nbsp;
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
-                      <h2>
-                        <span className="text-gray-400">Rating:</span>
-                        <br />
-                        {movie.vote_average}
-                      </h2>
-                      <h2>
-                        <span className="text-gray-400">Vote count:</span>
-                        <br />
-                        {movie.vote_count}
-                      </h2>
-                    </div>
+                    <h2>
+                      <span className="text-gray-400">Runtime:</span>
+                      <br />
+                      {movie.runtime}m
+                    </h2>
                   </div>
 
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
+                  <div className="flex flex-col gap-5">
                     <div>
                       <h2>
                         <span className="text-gray-400">
@@ -185,6 +171,18 @@ function Info() {
                         ))}
                       </ul>
                     </div>
+                  </div>
+                  <div className="flex flex-col gap-5">
+                    <h2>
+                      <span className="text-gray-400">Rating:</span>
+                      <br />
+                      {movie.vote_average}
+                    </h2>
+                    <h2>
+                      <span className="text-gray-400">Vote count:</span>
+                      <br />
+                      {movie.vote_count}
+                    </h2>
                   </div>
                 </div>
               </div>
