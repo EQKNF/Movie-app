@@ -111,7 +111,7 @@ function Header() {
           >
             <HeaderItem name={""} Icon={HiDotsVertical} />
             <div
-              className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 -translate-x-44 md:translate-x-0 ${
+              className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 -translate-x-12 sm:translate-x-0 ${
                 isHovered ? "opacity-100" : "opacity-0"
               } ${isVisible ? "visible" : "invisible"}`}
             >
