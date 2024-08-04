@@ -60,7 +60,7 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="relative bg-[#1A1D29] text-white min-h-[120vh]">
+    <div className="relative bg-[#1A1D29] text-white min-h-[100vh] z-[-1]">
       {movie ? (
         <div className="relative z-10">
           <div className="absolute top-0 left-0 w-full h-full">
@@ -90,7 +90,7 @@ function Info() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-5 mt-20">
+            <div className="flex flex-col gap-5 lg:mt-20">
               <h2 className="font-semibold text-2xl tracking-wider">DETAILS</h2>
               <hr className="border-gray-500" />
 
@@ -100,7 +100,7 @@ function Info() {
                   <h2 className=" text-xl">{movie.overview}</h2>
                 </div>
 
-                <div className="flex gap-2 justify-between lg:w-1/2">
+                <div className="flex gap-5 justify-between lg:w-1/2">
                   <div className="flex flex-col gap-5 w-1/3">
                     <h2>
                       <span className="text-gray-400">Release date:</span>
