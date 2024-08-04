@@ -75,7 +75,7 @@ function Info() {
 
           <div className="relative z-10 flex flex-col gap-5 xl:px-[71px] md:px-[58px] px-[40px] py-[150px]">
             <div className="flex flex-col gap-8">
-              <h2 className="text-7xl font-bold max-w-[678px]">
+              <h2 className="text-3xl md:text-7xl font-bold max-w-[678px]">
                 {movie.title}
               </h2>
               <h2 className="text-xl">{movie.tagline}</h2>
@@ -99,44 +99,46 @@ function Info() {
                   <h2 className=" text-xl">{movie.overview}</h2>
                 </div>
 
-                <div className="flex lg:w-1/2 gap-6 sm:flex-row flex-col ">
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-5">
-                    <h2>
-                      <span className="text-gray-400">Release date:</span>
-                      <br />
-                      {movie.release_date}
-                    </h2>
-                    <div>
-                      <span className="text-gray-400">Genres:</span>
-                      <ul className="flex flex-col">
-                        {movie.genres.map((genre, index) => (
-                          <li key={index}>
-                            {genre.name}
-                            {index < movie.genres.length - 1 && ","}&nbsp;
-                          </li>
-                        ))}
-                      </ul>
+                <div className="flex lg:w-1/2 gap-5 flex-row">
+                  <div className="flex flex-col sm:flex-row gap-5">
+                    <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
+                      <h2>
+                        <span className="text-gray-400">Release date:</span>
+                        <br />
+                        {movie.release_date}
+                      </h2>
+                      <div>
+                        <span className="text-gray-400">Genres:</span>
+                        <ul className="flex flex-col">
+                          {movie.genres.map((genre, index) => (
+                            <li key={index}>
+                              {genre.name}
+                              {index < movie.genres.length - 1 && ","}&nbsp;
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <h2>
+                        <span className="text-gray-400">Runtime:</span>
+                        <br />
+                        {movie.runtime}m
+                      </h2>
                     </div>
-                    <h2>
-                      <span className="text-gray-400">Runtime:</span>
-                      <br />
-                      {movie.runtime}m
-                    </h2>
-                  </div>
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-5">
-                    <h2>
-                      <span className="text-gray-400">Rating:</span>
-                      <br />
-                      {movie.vote_average}
-                    </h2>
-                    <h2>
-                      <span className="text-gray-400">Vote count:</span>
-                      <br />
-                      {movie.vote_count}
-                    </h2>
+                    <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
+                      <h2>
+                        <span className="text-gray-400">Rating:</span>
+                        <br />
+                        {movie.vote_average}
+                      </h2>
+                      <h2>
+                        <span className="text-gray-400">Vote count:</span>
+                        <br />
+                        {movie.vote_count}
+                      </h2>
+                    </div>
                   </div>
 
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-5">
                     <div>
                       <h2>
                         <span className="text-gray-400">

@@ -111,7 +111,7 @@ function Header() {
           >
             <HeaderItem name={""} Icon={HiDotsVertical} />
             <div
-              className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 ${
+              className={`absolute mt-3 bg-[#121212] border-[1px] border-gray-800 rounded-md py-4 pl-5 pr-10 transition-opacity duration-300 -translate-x-44 md:translate-x-0 ${
                 isHovered ? "opacity-100" : "opacity-0"
               } ${isVisible ? "visible" : "invisible"}`}
             >
@@ -149,7 +149,7 @@ function Header() {
             : "-translate-y-[450px] md:-translate-y-[330px] opacity-0"
         }`}
       >
-        <hr className="solid px-[110px] border-gray-600 mb-5" />
+        <hr className="solid sm:px-[110px] border-gray-600 mb-5" />
         <div className="flex flex-row items-center space-x-4 text-white cursor-pointer">
           <div className="flex items-center justify-center w-12 h-12 bg-zinc-700 rounded-full text-5xl font-thin hover:bg-zinc-600">
             <span className="-translate-y-[6px]">+</span>
