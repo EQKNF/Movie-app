@@ -60,10 +60,10 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="relative bg-[#1A1D29] text-white overflow-hidden">
+    <div className="relative bg-[#1A1D29] text-white min-h-[120vh]">
       {movie ? (
         <div className="relative z-10">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute inset-0 image-container">
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
@@ -99,7 +99,7 @@ function Info() {
                   <h2 className=" text-xl">{movie.overview}</h2>
                 </div>
 
-                <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-3 md:grid-rows-1 w-full mid:w-1/2">
+                <div className="flex gap-2 justify-between lg:w-1/2">
                   <div className="flex flex-col gap-5">
                     <h2>
                       <span className="text-gray-400">Release date:</span>
@@ -123,7 +123,6 @@ function Info() {
                       {movie.runtime}m
                     </h2>
                   </div>
-
                   <div className="flex flex-col gap-5">
                     <div>
                       <h2>
@@ -131,7 +130,7 @@ function Info() {
                           Countries of orgin:
                         </span>
                       </h2>
-                      <ul className="flex">
+                      <ul className="flex flex-col">
                         {movie.production_countries.map((country, index) => (
                           <li key={index}>
                             {country.name}
