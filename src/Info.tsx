@@ -60,7 +60,7 @@ function Info() {
   }, [id, movie, fetchMovie]);
 
   return (
-    <div className="relative bg-[#1A1D29] text-white">
+    <div className="relative bg-[#1A1D29] text-white overflow-hidden">
       {movie ? (
         <div className="relative z-10">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -99,16 +99,16 @@ function Info() {
                   <h2 className=" text-xl">{movie.overview}</h2>
                 </div>
 
-                <div className="flex lg:w-1/2 gap-6">
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
+                <div className="flex lg:w-1/2 gap-6 sm:flex-row flex-col ">
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-5">
                     <h2>
-                      Release date:
+                      <span className="text-gray-400">Release date:</span>
                       <br />
                       {movie.release_date}
                     </h2>
                     <div>
-                      <h2>Genres:</h2>
-                      <ul className="flex">
+                      <span className="text-gray-400">Genres:</span>
+                      <ul className="flex flex-col">
                         {movie.genres.map((genre, index) => (
                           <li key={index}>
                             {genre.name}
@@ -118,26 +118,31 @@ function Info() {
                       </ul>
                     </div>
                     <h2>
-                      Runtime:
+                      <span className="text-gray-400">Runtime:</span>
                       <br />
                       {movie.runtime}m
                     </h2>
                   </div>
-                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
+                  <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-5">
                     <h2>
-                      Rating:
+                      <span className="text-gray-400">Rating:</span>
                       <br />
                       {movie.vote_average}
                     </h2>
                     <h2>
-                      Vote count:
+                      <span className="text-gray-400">Vote count:</span>
                       <br />
                       {movie.vote_count}
                     </h2>
                   </div>
+
                   <div className="text-nowrap lg:w-1/2 flex flex-col gap-y-4">
                     <div>
-                      <h2>Countries of origin:</h2>
+                      <h2>
+                        <span className="text-gray-400">
+                          Countries of orgin:
+                        </span>
+                      </h2>
                       <ul className="flex">
                         {movie.production_countries.map((country, index) => (
                           <li key={index}>
@@ -150,7 +155,9 @@ function Info() {
                       </ul>
                     </div>
                     <div>
-                      <h2>Spoken languages:</h2>
+                      <h2>
+                        <span className="text-gray-400">Spoken languages:</span>
+                      </h2>
                       <ul className="flex">
                         {movie.spoken_languages.map((language, index) => (
                           <li key={index}>
@@ -162,7 +169,9 @@ function Info() {
                       </ul>
                     </div>
                     <div>
-                      <h2>Production companies:</h2>
+                      <span className="text-gray-400">
+                        Production companies:
+                      </span>
                       <ul className="flex flex-col">
                         {movie.production_companies.map((company, index) => (
                           <li key={index}>
