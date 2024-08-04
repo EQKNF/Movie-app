@@ -131,7 +131,7 @@ function Info() {
                           Countries of orgin:
                         </span>
                       </h2>
-                      <ul className="flex flex-col">
+                      <ul className="flex flex-col md:flex-row flex-wrap">
                         {movie.production_countries.map((country, index) => (
                           <li key={index}>
                             {country.name}
@@ -146,7 +146,7 @@ function Info() {
                       <h2>
                         <span className="text-gray-400">Spoken languages:</span>
                       </h2>
-                      <ul className="flex">
+                      <ul className="flex flex-col md:flex-row flex-wrap">
                         {movie.spoken_languages.map((language, index) => (
                           <li key={index}>
                             {language.english_name}
@@ -160,7 +160,7 @@ function Info() {
                       <span className="text-gray-400">
                         Production companies:
                       </span>
-                      <ul className="flex flex-col">
+                      <ul className="flex flex-col md:flex-row flex-wrap">
                         {movie.production_companies.map((company, index) => (
                           <li key={index}>
                             {company.name}
