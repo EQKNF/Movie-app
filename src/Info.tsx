@@ -89,7 +89,8 @@ function Info() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col gap-5">
+
+            <div className="flex flex-col gap-5 mt-20">
               <h2 className="font-semibold text-2xl tracking-wider">DETAILS</h2>
               <hr className="border-gray-500" />
 
@@ -100,7 +101,7 @@ function Info() {
                 </div>
 
                 <div className="flex gap-2 justify-between lg:w-1/2">
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 w-1/3">
                     <h2>
                       <span className="text-gray-400">Release date:</span>
                       <br />
@@ -108,7 +109,7 @@ function Info() {
                     </h2>
                     <div>
                       <span className="text-gray-400">Genres:</span>
-                      <ul className="flex flex-col">
+                      <ul className="flex flex-col md:flex-row flex-wrap">
                         {movie.genres.map((genre, index) => (
                           <li key={index}>
                             {genre.name}
@@ -123,7 +124,7 @@ function Info() {
                       {movie.runtime}m
                     </h2>
                   </div>
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 w-1/3">
                     <div>
                       <h2>
                         <span className="text-gray-400">
@@ -171,7 +172,7 @@ function Info() {
                       </ul>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-5">
+                  <div className="flex flex-col gap-5 w-1/3">
                     <h2>
                       <span className="text-gray-400">Rating:</span>
                       <br />
