@@ -11,7 +11,7 @@ interface LandscapeMovieCard {
 
 function LandscapeMovieCard({ movie }: LandscapeMovieCard) {
   return (
-    <div className="my-5 mx-1 flex flex-col items-center select-none hover:scale-105 transition-all duration-300 ease-in">
+    <div className="my-5 mx-0 lg:mx-1 flex flex-col items-center select-none hover:scale-105 transition-all duration-300 ease-in">
       <div className="relative cursor-pointer ">
         <img
           src={IMAGE_BASE_URL + movie.backdrop_path}
@@ -19,7 +19,7 @@ function LandscapeMovieCard({ movie }: LandscapeMovieCard) {
         />
         <div className="absolute inset-0 rounded-lg border-[3px] border-transparent hover:border-white transition-all duration-300 ease-in m-[-6px]"></div>
       </div>
-      <h2 className="w-[110px] lg:w-[120px] xl:w-[170px] 2xl:w-[250px]  text-white pt-2 text-center truncate">
+      <h2 className="w-[100px] lg:w-[120px] xl:w-[170px] 2xl:w-[250px]  text-white pt-2 text-center truncate">
         {movie.title}
       </h2>
     </div>

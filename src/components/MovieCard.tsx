@@ -10,7 +10,7 @@ interface MovieCardProps {
 
 function MovieCard({ movie }: MovieCardProps) {
   return (
-    <div className="mt-5 mb-10 mx-1">
+    <div className="mt-5 mb-10 mx-0 lg:mx-1">
       <div className="relative group hover:scale-105 transition-all duration-300 ease-in">
         <img
           src={IMAGE_BASE_URL + movie.poster_path}
