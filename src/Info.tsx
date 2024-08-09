@@ -67,7 +67,6 @@ function Info() {
             <div className="absolute inset-0 image-container">
               <img
                 src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                alt={movie.title}
                 className="object-cover w-full h-full image"
               />
             </div>
