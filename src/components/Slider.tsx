@@ -76,7 +76,7 @@ function Slider() {
                     className="object-cover rounded-sm 2xl:max-h-[700px] lg:max-h-[372px] md:max-h-[250px] sm:max-h-[150px] max-h-[520px] w-full shadow-lg shadow-black"
                   />
                   <h3 className="absolute inset-0 flex items-center left-10 lg:left-20  opacity-0 sm:opacity-90 max-w-[600px] ">
-                    <span className="font-semibold 2xl:text-7xl xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl text-white sm:font-outline-1 lg:font-outline-2">
+                    <span className="font-bold xl:text-7xl lg:text-6xl md:text-5xl sm:text-3xl text-white font-outline-1">
                       {item.title}
                     </span>
                   </h3>
