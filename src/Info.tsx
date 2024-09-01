@@ -75,13 +75,13 @@ function Info() {
       {isLoading ? (
         <Preloader />
       ) : (
-        <div className="relative bg-[#1A1D29] text-white min-h-[100vh] overflow-y-hidden z-[-1]">
+        <div className="relative bg-[#1A1D29] text-white min-h-[100vh] z-[-1]">
           {movie ? (
             <div className="relative z-10">
               <div className="absolute top-0 left-0 w-full h-full">
                 <div className="absolute inset-0 image-container">
                   <img
-                    src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                    src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
                     className="object-cover w-full h-full image"
                   />
                 </div>
