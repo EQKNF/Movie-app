@@ -178,24 +178,6 @@ function Info() {
                             ))}
                           </ul>
                         </div>
-                        <div>
-                          <span className="text-gray-400">
-                            Production companies:
-                          </span>
-                          <ul className="flex flex-col md:flex-row flex-wrap">
-                            {movie.production_companies.map(
-                              (company, index) => (
-                                <li key={index}>
-                                  {company.name}
-                                  {index <
-                                    movie.production_companies.length - 1 &&
-                                    ","}
-                                  {<br />}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        </div>
                       </div>
                       <div className="flex flex-col gap-5 w-1/3">
                         <h2>
