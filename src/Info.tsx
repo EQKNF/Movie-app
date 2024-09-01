@@ -75,7 +75,7 @@ function Info() {
       {isLoading ? (
         <Preloader />
       ) : (
-        <div className="relative bg-[#1A1D29] text-white min-h-[100vh] max-h-[120vh] z-[-1]">
+        <div className="relative bg-[#1A1D29] text-white min-h-[100vh] overflow-y-hidden z-[-1]">
           {movie ? (
             <div className="relative z-10">
               <div className="absolute top-0 left-0 w-full h-full">
